@@ -1,0 +1,9 @@
+[submodule "bundle/vim-pml"]
+	path = bundle/vim-pml
+	url = git@github.com:neror/vim-pml.git
+[submodule "bundle/vim-snipmate"]
+	path = bundle/vim-snipmate
+	url = git@github.com:neror/snipmate.vim.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = https://github.com/hallison/vim-markdown.git
