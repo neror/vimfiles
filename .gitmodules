@@ -4,9 +4,6 @@
 [submodule "bundle/vim-snipmate"]
 	path = bundle/vim-snipmate
 	url = git@github.com:neror/snipmate.vim.git
-[submodule "bundle/vim-markdown"]
-	path = bundle/vim-markdown
-	url = git@github.com:neror/vim-markdown.git
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = git://git.wincent.com/command-t.git
