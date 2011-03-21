@@ -46,11 +46,17 @@ autocmd BufWinEnter *.rst set foldlevel=1
 autocmd BufRead,BufNewFile *.rst set textwidth=140
 
 "tell vim about pml files
-set spell
-"autocmd BufRead,BufNewFile *.pml set filetype=xml.pml
+autocmd BufRead,BufNewFile *.pml set spell
 autocmd BufRead,BufNewFile *.pml set filetype=pml
 autocmd BufRead,BufNewFile *.pml set number
 autocmd BufRead,BufNewFile *.pml set textwidth=140
+
+"tell vim about taskpaper files
+autocmd BufRead,BufNewFile *.pml set spell
+autocmd BufRead,BufNewFile *.pml set nonumber
+autocmd BufRead,BufNewFile *.pml set tabstop=2
+autocmd BufRead,BufNewFile *.pml set noexpandtab
+
 
 let g:xml_syntax_folding = 1
 "let xml_jump_string = "Ç"

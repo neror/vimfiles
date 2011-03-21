@@ -16,3 +16,6 @@
 [submodule "bundle/cocoa.vim"]
 	path = bundle/cocoa.vim
 	url = git@github.com:neror/cocoa.vim.git
+[submodule "bundle/taskpaper.vim"]
+	path = bundle/taskpaper.vim
+	url = git@github.com:neror/taskpaper.vim.git
