@@ -21,6 +21,8 @@ set linebreak
 set scrolloff=1
 set showmode
 set showmatch
+set number
+let &showbreak = '... '
 "syn sync minlines=1000
 set paste
 let g:netrw_liststyle=3
@@ -48,7 +50,7 @@ autocmd BufRead,BufNewFile *.rst set textwidth=140
 "tell vim about pml files
 autocmd BufRead,BufNewFile *.pml set spell
 autocmd BufRead,BufNewFile *.pml set filetype=pml
-autocmd BufRead,BufNewFile *.pml set number
+autocmd BufRead,BufNewFile *.pml set nonumber
 autocmd BufRead,BufNewFile *.pml set textwidth=140
 
 "tell vim about taskpaper files
