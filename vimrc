@@ -59,6 +59,8 @@ autocmd BufRead,BufNewFile *.pml set nonumber
 autocmd BufRead,BufNewFile *.pml set tabstop=2
 autocmd BufRead,BufNewFile *.pml set noexpandtab
 
+"tell vim about jinja files
+autocmd BufRead,BufNewFile *.j2 set filetype=htmljinja
 
 let g:xml_syntax_folding = 1
 "let xml_jump_string = "Ç"

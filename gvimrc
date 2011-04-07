@@ -1,5 +1,6 @@
 "For Macvim
 set guifont=Menlo\ Regular:h13
+set guioptions=egmt
 set lines=66
 set columns=209
 set number
