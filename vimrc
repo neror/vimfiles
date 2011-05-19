@@ -10,6 +10,7 @@ filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+set textwidth=140
 set expandtab
 set smartindent
 set foldmethod=syntax
@@ -38,6 +39,9 @@ vnoremap Q gq
 "Taglist plugin
 let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 nmap <Leader>z :TlistToggle<CR>
+
+"NERDTree plugin
+nmap <Leader>b :NERDTreeToggle<CR>
 
 "Set author name for snipMate
 let g:snips_author = 'Nathan Eror'
