@@ -41,7 +41,7 @@ let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 nmap <Leader>z :TlistToggle<CR>
 
 "NERDTree plugin
-nmap <Leader>b :NERDTreeToggle<CR>
+nmap <Leader>n :NERDTreeToggle<CR>
 
 "Set author name for snipMate
 let g:snips_author = 'Nathan Eror'
@@ -56,12 +56,13 @@ autocmd BufRead,BufNewFile *.pml set spell
 autocmd BufRead,BufNewFile *.pml set filetype=pml
 autocmd BufRead,BufNewFile *.pml set nonumber
 autocmd BufRead,BufNewFile *.pml set textwidth=140
+autocmd	BufRead,BufNewFile *.pml map <Leader>b :!./rake clean no-workflow %<.pdf;open %<.pdf<CR> 
 
 "tell vim about taskpaper files
-autocmd BufRead,BufNewFile *.pml set spell
-autocmd BufRead,BufNewFile *.pml set nonumber
-autocmd BufRead,BufNewFile *.pml set tabstop=2
-autocmd BufRead,BufNewFile *.pml set noexpandtab
+"autocmd BufRead,BufNewFile *.pml set spell
+"autocmd BufRead,BufNewFile *.pml set nonumber
+"autocmd BufRead,BufNewFile *.pml set tabstop=2
+"autocmd BufRead,BufNewFile *.pml set noexpandtab
 
 "tell vim about jinja files
 autocmd BufRead,BufNewFile *.j2 set filetype=htmljinja
