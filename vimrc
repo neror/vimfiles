@@ -3,6 +3,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 syntax enable
+set backupcopy=yes
 set nocompatible
 set showcmd
 set ruler
