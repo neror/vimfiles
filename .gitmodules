@@ -9,7 +9,7 @@
 	url = git://git.wincent.com/command-t.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = git@github.com:neror/vim-fugitive.git
 [submodule "bundle/cocoa.vim"]
 	path = bundle/cocoa.vim
 	url = git@github.com:neror/cocoa.vim.git
@@ -25,3 +25,6 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-ragtag"]
+	path = bundle/vim-ragtag
+	url = git@github.com:neror/vim-ragtag.git
