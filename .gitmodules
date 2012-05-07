@@ -28,3 +28,6 @@
 [submodule "bundle/vim-multimarkdown"]
 	path = bundle/vim-multimarkdown
 	url = git://github.com/jngeist/vim-multimarkdown.git
+[submodule "bundle/vim-ragtag"]
+	path = bundle/vim-ragtag
+	url = git@github.com:neror/vim-ragtag.git
