@@ -43,6 +43,9 @@ nmap <Leader>z :TlistToggle<CR>
 "NERDTree plugin
 nmap <Leader>n :NERDTreeToggle<CR>
 
+"For Marked.app MultiMarkdown preview
+:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+
 "Set author name for snipMate
 let g:snips_author = 'Nathan Eror'
 
