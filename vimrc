@@ -47,6 +47,9 @@ nmap <Leader>n :NERDTreeToggle<CR>
 "For Marked.app MultiMarkdown preview
 :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
+"MultiMarkdown utlility mappings
+vmap K !~/Library/Application\ Support/MultiMarkdown/Utilities/table_cleanup.pl<cr>
+
 "Set author name for snipMate
 let g:snips_author = 'Nathan Eror'
 
@@ -62,16 +65,14 @@ autocmd BufRead,BufNewFile *.pml set nonumber
 autocmd BufRead,BufNewFile *.pml set textwidth=140
 autocmd	BufRead,BufNewFile *.pml map <Leader>b :!./rake clean no-workflow %<.pdf;open %<.pdf<CR> 
 
-"tell vim about taskpaper files
-"autocmd BufRead,BufNewFile *.pml set spell
-"autocmd BufRead,BufNewFile *.pml set nonumber
-"autocmd BufRead,BufNewFile *.pml set tabstop=2
-"autocmd BufRead,BufNewFile *.pml set noexpandtab
-
 "tell vim about jinja files
 autocmd BufRead,BufNewFile *.j2 set filetype=htmljinja
 
 let g:xml_syntax_folding = 1
 "let xml_jump_string = "Ç"
 
+"Map light/dark background toggle for Solarized
+call togglebg#map("<F5>")
+
 helptags ~/.vim/doc/
+
