@@ -44,11 +44,17 @@ nmap <Leader>z :TlistToggle<CR>
 "NERDTree plugin
 nmap <Leader>n :NERDTreeToggle<CR>
 
-"For Marked.app MultiMarkdown preview
-:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
-
-"MultiMarkdown utlility mappings
-vmap K !~/Library/Application\ Support/MultiMarkdown/Utilities/table_cleanup.pl<cr>
+if has("mac")
+  "For Marked.app MultiMarkdown preview
+  :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+  
+  "MultiMarkdown utlility mappings
+  vmap K !~/Library/Application\ Support/MultiMarkdown/Utilities/table_cleanup.pl<cr>
+  if exists("*togglebg")
+    "Map light/dark background toggle for Solarized
+    call togglebg#map("<F5>")
+  endif
+endif
 
 "Set author name for snipMate
 let g:snips_author = 'Nathan Eror'
@@ -70,9 +76,6 @@ autocmd BufRead,BufNewFile *.j2 set filetype=htmljinja
 
 let g:xml_syntax_folding = 1
 "let xml_jump_string = "Ç"
-
-"Map light/dark background toggle for Solarized
-call togglebg#map("<F5>")
 
 helptags ~/.vim/doc/
 
