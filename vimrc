@@ -10,9 +10,9 @@ set ruler
 filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
-set softtabstop=2
+set softtabstop=0
 set textwidth=140
-set expandtab
+set noexpandtab
 set smartindent
 set foldmethod=syntax
 set incsearch
