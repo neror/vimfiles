@@ -1,7 +1,3 @@
-"Pathogen startup
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
 syntax enable
 set backupcopy=yes
 set nocompatible
@@ -28,6 +24,14 @@ let &showbreak = '... '
 "syn sync minlines=1000
 set paste
 let g:netrw_liststyle=3
+
+"Get python site-packages on the sys.path
+py import sys
+py sys.path.append('/Library/Python/2.7/site-packages')
+
+"Pathogen startup
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 "set statusline=%{fugitive#statusline()}
 set statusline=%<%f\ %y%m%r%w%=%-14.(%l,%c%V%)\ %P
