@@ -20,6 +20,7 @@ set scrolloff=1
 set showmode
 set showmatch
 set number
+set background=light
 let &showbreak = '... '
 "syn sync minlines=1000
 set paste
