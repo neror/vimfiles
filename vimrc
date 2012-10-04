@@ -21,6 +21,7 @@ set showmode
 set showmatch
 set number
 set background=light
+set splitright
 let &showbreak = '... '
 "syn sync minlines=1000
 set paste
@@ -78,6 +79,9 @@ autocmd	BufRead,BufNewFile *.pml map <Leader>b :!./rake clean no-workflow %<.pdf
 
 "tell vim about jinja files
 autocmd BufRead,BufNewFile *.j2 set filetype=htmljinja
+
+"Unity C# compiler pligin
+autocmd BufRead,BufNewFile *.cs compiler unitycs
 
 let g:xml_syntax_folding = 1
 "let xml_jump_string = "Ç"
