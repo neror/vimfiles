@@ -40,3 +40,6 @@
 [submodule "bundle/scratch.vim"]
 	path = bundle/scratch.vim
 	url = git://github.com/vim-scripts/scratch.vim.git
+[submodule "bundle/tslime.vim"]
+	path = bundle/tslime.vim
+	url = git://github.com/jgdavey/tslime.vim.git

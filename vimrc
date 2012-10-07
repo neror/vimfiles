@@ -86,5 +86,10 @@ autocmd BufRead,BufNewFile *.cs compiler unitycs
 let g:xml_syntax_folding = 1
 "let xml_jump_string = "Ç"
 
+"tslime keymaps
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+nmap <C-c>r <Plug>SetTmuxVars
+
 helptags ~/.vim/doc/
 
