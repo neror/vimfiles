@@ -43,6 +43,9 @@ nnoremap Q gqap
 "and to relfow a selected block in visual mode
 vnoremap Q gq
 
+"Clear the search pattern
+nnoremap <Leader>s :let @/ = ""<CR>
+
 "Taglist plugin
 let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 nmap <Leader>z :TlistToggle<CR>
@@ -90,6 +93,9 @@ let g:xml_syntax_folding = 1
 vmap <C-c><C-c> <Plug>SendSelectionToTmux
 nmap <C-c><C-c> <Plug>NormalModeSendToTmux
 nmap <C-c>r <Plug>SetTmuxVars
+
+"Powerline
+let g:Powerline_symbols = 'fancy'
 
 helptags ~/.vim/doc/
 
