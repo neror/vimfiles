@@ -66,8 +66,8 @@ endif
 let g:snips_author = 'Nathan Eror'
 
 "autocmd BufWinLeave *.rst mkview
-autocmd BufWinEnter *.rst Vst fold
-autocmd BufWinEnter *.rst set foldlevel=1
+"autocmd BufWinEnter *.rst Vst fold
+"autocmd BufWinEnter *.rst set foldlevel=1
 autocmd BufRead,BufNewFile *.rst set textwidth=140
 
 "tell vim about pml files
