@@ -44,6 +44,7 @@ nnoremap Q gqap
 vnoremap Q gq
 
 "Clear the search pattern
+set hlsearch
 nnoremap <Leader>s :let @/ = ""<CR>
 
 "Taglist plugin
