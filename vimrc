@@ -43,23 +43,27 @@ nnoremap Q gqap
 "and to relfow a selected block in visual mode
 vnoremap Q gq
 
+"Make the spacebar do something useful in normal mode
+nnoremap <Space> viw
+
 "Clear the search pattern
-set hlsearch
-nnoremap <Leader>s :let @/ = ""<CR>
+set nohlsearch
+nnoremap <Leader>sh :set hlsearch!<CR>
+nnoremap <Leader>ss :let @/ = ""<CR>
 
 "Taglist plugin
 let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
-nmap <Leader>z :TlistToggle<CR>
+nnoremap <Leader>z :TlistToggle<CR>
 
 "NERDTree plugin
-nmap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
 
 if has("mac")
   "For Marked.app MultiMarkdown preview
   :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
   
   "MultiMarkdown utlility mappings
-  vmap K !~/Library/Application\ Support/MultiMarkdown/Utilities/table_cleanup.pl<cr>
+  vnoremap K !~/Library/Application\ Support/MultiMarkdown/Utilities/table_cleanup.pl<cr>
   if exists("*togglebg")
     "Map light/dark background toggle for Solarized
     call togglebg#map("<F5>")
@@ -69,34 +73,49 @@ endif
 "Set author name for snipMate
 let g:snips_author = 'Nathan Eror'
 
-"autocmd BufWinLeave *.rst mkview
-"autocmd BufWinEnter *.rst Vst fold
-"autocmd BufWinEnter *.rst set foldlevel=1
-autocmd BufRead,BufNewFile *.rst set textwidth=140
+augroup filetype_rst
+	autocmd!
+	"autocmd BufWinLeave *.rst mkview
+	"autocmd BufWinEnter *.rst Vst fold
+	"autocmd BufWinEnter *.rst set foldlevel=1
+	autocmd BufRead,BufNewFile *.rst set textwidth=140
+augroup END
 
 "tell vim about pml files
-autocmd BufRead,BufNewFile *.pml set spell
-autocmd BufRead,BufNewFile *.pml set filetype=pml
-autocmd BufRead,BufNewFile *.pml set nonumber
-autocmd BufRead,BufNewFile *.pml set textwidth=140
-autocmd	BufRead,BufNewFile *.pml map <Leader>b :!./rake clean no-workflow %<.pdf;open %<.pdf<CR> 
+augroup filetype_pml
+	autocmd!
+	autocmd BufRead,BufNewFile *.pml set spell
+	autocmd BufRead,BufNewFile *.pml set filetype=pml
+	autocmd BufRead,BufNewFile *.pml set nonumber
+	autocmd BufRead,BufNewFile *.pml set textwidth=140
+	autocmd	BufRead,BufNewFile *.pml noremap <LocalLeader>b :!./rake clean no-workflow %<.pdf;open %<.pdf<CR> 
+augroup END
 
 "tell vim about jinja files
-autocmd BufRead,BufNewFile *.j2 set filetype=htmljinja
+augroup filetype_htmljinja
+	autocmd!
+	autocmd BufRead,BufNewFile *.j2 set filetype=htmljinja
+augroup END
 
-"Unity C# compiler pligin
-autocmd BufRead,BufNewFile *.cs compiler unitycs
+"Unity C# compiler plugin
+augroup filetype_unitycs
+	autocmd!
+	autocmd BufRead,BufNewFile *.cs compiler unitycs
+augroup END
 
 let g:xml_syntax_folding = 1
 "let xml_jump_string = "Ç"
 
 "tslime keymaps
-vmap <C-c><C-c> <Plug>SendSelectionToTmux
-nmap <C-c><C-c> <Plug>NormalModeSendToTmux
-nmap <C-c>r <Plug>SetTmuxVars
+vnoremap <C-c><C-c> <Plug>SendSelectionToTmux
+nnoremap <C-c><C-c> <Plug>NormalModeSendToTmux
+nnoremap <C-c>r <Plug>SetTmuxVars
 
 "Powerline
 let g:Powerline_symbols = 'fancy'
 
 helptags ~/.vim/doc/
 
+"Quick 'macro' mappings
+nnoremap <leader>vs :vsplit $MYVIMRC<cr>
+nnoremap <leader>ve :source $MYVIMRC<cr>
