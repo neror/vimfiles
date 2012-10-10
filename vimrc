@@ -117,5 +117,10 @@ let g:Powerline_symbols = 'fancy'
 helptags ~/.vim/doc/
 
 "Quick 'macro' mappings
-nnoremap <leader>vs :vsplit $MYVIMRC<cr>
-nnoremap <leader>ve :source $MYVIMRC<cr>
+nnoremap <leader>ve :vsplit $MYVIMRC<cr>
+nnoremap <leader>vs :source $MYVIMRC<cr>
+
+"clang_complete
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'snipmate'
+
