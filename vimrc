@@ -1,3 +1,5 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+
 syntax enable
 set backupcopy=yes
 set nocompatible

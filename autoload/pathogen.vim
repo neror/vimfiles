@@ -1,1 +1,0 @@
-/Users/neror/Work/vim-pathogen/autoload/pathogen.vim
