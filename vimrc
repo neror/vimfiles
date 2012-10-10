@@ -32,8 +32,7 @@ py import sys
 py sys.path.append('/Library/Python/2.7/site-packages')
 
 "Pathogen startup
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
 
 "set statusline=%{fugitive#statusline()}
 set statusline=%<%f\ %y%m%r%w%=%-14.(%l,%c%V%)\ %P
@@ -113,8 +112,6 @@ nnoremap <C-c>r <Plug>SetTmuxVars
 
 "Powerline
 let g:Powerline_symbols = 'fancy'
-
-helptags ~/.vim/doc/
 
 "Quick 'macro' mappings
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
