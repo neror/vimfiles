@@ -1,10 +1,10 @@
+set nocompatible
+filetype plugin indent on
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 set backupcopy=yes
-set nocompatible
 set showcmd
 set ruler
-filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -35,7 +35,7 @@ py sys.path.append('/Library/Python/2.7/site-packages')
 call pathogen#infect()
 
 "set statusline=%{fugitive#statusline()}
-set statusline=%<%f\ %y%m%r%w%=%-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %y%m%r%w%=%-14.(%l,%c%V%)\ %P
 
 "map Q to reflow paragraph
 nnoremap Q gqap
@@ -119,9 +119,11 @@ nnoremap <leader>vs :source $MYVIMRC<cr>
 
 "clang_complete
 let g:clang_snippets = 1
-let g:clang_snippets_engine = 'snipmate'
+let g:clang_snippets_engine = 'clang_complete'
 
-let g:solarized_contrast="high"
+let g:solarized_contrast="high"    "default value is normal
+let g:solarized_visibility="low"    "default value is normal
+let g:solarized_hitrail=1    "default value is 0
 syntax enable
 set background=dark
 colorscheme solarized
@@ -132,3 +134,11 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+"Set iTerm2 tab to filename in vim
+if &term == "screen"
+	set t_ts=^[]1;
+	set t_fs=^G
+endif
+if &term == "screen" || &term == "xterm"
+  set title
+endif
