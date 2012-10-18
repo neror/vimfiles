@@ -1,6 +1,5 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
-syntax enable
 set backupcopy=yes
 set nocompatible
 set showcmd
@@ -22,7 +21,6 @@ set scrolloff=1
 set showmode
 set showmatch
 set number
-set background=light
 set splitright
 let &showbreak = '... '
 "syn sync minlines=1000
@@ -122,4 +120,15 @@ nnoremap <leader>vs :source $MYVIMRC<cr>
 "clang_complete
 let g:clang_snippets = 1
 let g:clang_snippets_engine = 'snipmate'
+
+let g:solarized_contrast="high"
+syntax enable
+set background=dark
+colorscheme solarized
+
+"Force myself to use hjkl
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
