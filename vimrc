@@ -22,7 +22,7 @@ set showmode
 set showmatch
 set number
 set splitright
-let &showbreak = '... '
+"let &showbreak = '... '
 "syn sync minlines=1000
 set paste
 let g:netrw_liststyle=3
@@ -58,11 +58,20 @@ nnoremap <Leader>z :TlistToggle<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
 if has("mac")
-  "For Marked.app MultiMarkdown preview
-  :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
-  
-  "MultiMarkdown utlility mappings
-  vnoremap K !~/Library/Application\ Support/MultiMarkdown/Utilities/table_cleanup.pl<cr>
+	augroup filetype_markdown_on_mac
+		autocmd!
+
+		"For Marked.app MultiMarkdown preview
+		autocmd FileType markdown nnoremap <buffer> <leader>m :silent !open -a Marked.app '%:p'<cr>
+
+		"MultiMarkdown utlility mappings
+		autocmd FileType markdown vnoremap <buffer> K !~/Library/Application\ Support/MultiMarkdown/Utilities/table_cleanup.pl<cr>
+
+		"formd Markdown shortcuts
+		autocmd FileType markdown nmap <buffer> <leader>fr :%! formd -r<CR>
+		autocmd FileType markdown nmap <buffer> <leader>fi :%! formd -i<CR>
+	augroup END
+
   if exists("*togglebg")
     "Map light/dark background toggle for Solarized
     call togglebg#map("<F5>")
@@ -112,6 +121,7 @@ nnoremap <C-c>r <Plug>SetTmuxVars
 
 "Powerline
 let g:Powerline_symbols = 'fancy'
+let g:Powerline_colorscheme = 'skwp'
 
 "Quick 'macro' mappings
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
@@ -142,3 +152,4 @@ endif
 if &term == "screen" || &term == "xterm"
   set title
 endif
+
