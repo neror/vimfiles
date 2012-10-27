@@ -2,6 +2,7 @@ set nocompatible
 filetype plugin indent on
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
+set history=2000
 set backupcopy=yes
 set showcmd
 set ruler
@@ -9,7 +10,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set textwidth=140
-set noexpandtab
+set expandtab
 set smartindent
 set foldmethod=syntax
 set incsearch
@@ -22,6 +23,7 @@ set showmode
 set showmatch
 set number
 set splitright
+set list
 "let &showbreak = '... '
 "syn sync minlines=1000
 set paste
@@ -38,12 +40,17 @@ call pathogen#infect()
 "set statusline=%<%f\ %y%m%r%w%=%-14.(%l,%c%V%)\ %P
 
 "map Q to reflow paragraph
-nnoremap Q gqap
+nnoremap Q gqip
+nnoremap W vipJ
 "and to relfow a selected block in visual mode
 vnoremap Q gq
 
 "Make the spacebar do something useful in normal mode
 nnoremap <Space> viw
+
+"HJKL use virtual lines
+nnoremap j gj
+nnoremap k gk
 
 "Clear the search pattern
 set nohlsearch
@@ -56,6 +63,10 @@ nnoremap <Leader>z :TlistToggle<CR>
 
 "NERDTree plugin
 nnoremap <Leader>n :NERDTreeToggle<CR>
+
+"CtrlP custom settings
+let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_working_path_mode = 'a'
 
 if has("mac")
 	augroup filetype_markdown_on_mac
@@ -70,6 +81,9 @@ if has("mac")
 		"formd Markdown shortcuts
 		autocmd FileType markdown nmap <buffer> <leader>fr :%! formd -r<CR>
 		autocmd FileType markdown nmap <buffer> <leader>fi :%! formd -i<CR>
+
+    "Turn off list setting to make text wrap at word boundaries
+		autocmd FileType markdown :set nolist
 	augroup END
 
   if exists("*togglebg")
