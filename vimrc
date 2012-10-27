@@ -48,6 +48,9 @@ vnoremap Q gq
 "Make the spacebar do something useful in normal mode
 nnoremap <Space> viw
 
+"<f4> to index tags with ctags
+nnoremap <f4> :!ctags -R<CR>
+
 "HJKL use virtual lines
 nnoremap j gj
 nnoremap k gk
