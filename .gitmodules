@@ -62,3 +62,9 @@
 [submodule "bundle/vim-visual-star-search"]
 	path = bundle/vim-visual-star-search
 	url = git://github.com/nelstrom/vim-visual-star-search.git
+[submodule "bundle/vim-json"]
+	path = bundle/vim-json
+	url = git://github.com/vim-scripts/vim-json-bundle.git
+[submodule "bundle/taglist.vim"]
+	path = bundle/taglist.vim
+	url = git://github.com/vim-scripts/taglist.vim.git
