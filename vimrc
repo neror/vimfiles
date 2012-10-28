@@ -9,7 +9,7 @@ set ruler
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set textwidth=140
+set textwidth=0
 set expandtab
 set smartindent
 set foldmethod=syntax
@@ -162,11 +162,12 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 "Set iTerm2 tab to filename in vim
-if &term == "screen"
-	set t_ts=^[]1;
-	set t_fs=^G
+autocmd BufEnter * let &titlestring = expand("%:t")
+if &term == "xterm-256color"
+	set t_ts=]1;
+	set t_fs=
 endif
-if &term == "screen" || &term == "xterm"
+if &term == "screen" || &term == "xterm" || &term == "xterm-256color"
   set title
 endif
 
