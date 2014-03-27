@@ -1,5 +1,5 @@
 "For Macvim
-set guifont=Menlo\ Regular:h12
+set guifont=Anonymous\ Pro\ for\ Powerline:h13
 set guioptions=egmt
 set lines=66
 set columns=209
