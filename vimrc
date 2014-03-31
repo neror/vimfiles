@@ -1,3 +1,40 @@
+set nocompatible
+filetype off "required
+
+"set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+let g:vundle_default_git_proto = 'git'
+call vundle#rc()
+
+Plugin 'gmarik/vundle'
+Plugin 'neror/vim-pml'
+Plugin 'tpope/vim-fugitive'
+Plugin 'neror/cocoa.vim'
+Plugin 'neror/taskpaper.vim'
+Plugin 'neror/vim-markdown'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jngeist/vim-multimarkdown'
+Plugin 'neror/vim-ragtag'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Rykka/riv.vim'
+Plugin 'scratch.vim'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Rip-Rip/clang_complete'
+Plugin 'SirVer/ultisnips'
+Plugin 'ervandew/supertab'
+Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'vim-json-bundle'
+Plugin 'taglist.vim'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'nosami/Omnisharp'
+Plugin 'tpope/vim-dispatch'
+
+"End of Vundle config
+filetype plugin indent on
+
 "Powerline http://powerline.readthedocs.org/
 set rtp+=/Users/neror/Work/powerline/powerline/bindings/vim
 
@@ -10,10 +47,6 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-
-set nocompatible
-filetype plugin indent on
-runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 set history=2000
 set backupcopy=yes
@@ -45,12 +78,6 @@ let g:netrw_liststyle=3
 "Get python site-packages on the sys.path
 py import sys
 py sys.path.append('/Library/Python/2.7/site-packages')
-
-"Pathogen startup
-call pathogen#infect()
-
-"set statusline=%{fugitive#statusline()}
-"set statusline=%<%f\ %y%m%r%w%=%-14.(%l,%c%V%)\ %P
 
 "map Q to reflow paragraph
 nnoremap Q gqip
@@ -250,3 +277,4 @@ nnoremap <leader>sp :OmniSharpStopServer<cr>
 nnoremap <leader>th :OmniSharpHighlightTypes<cr>
 
 " END Omnisharp config
+
