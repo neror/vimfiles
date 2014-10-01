@@ -22,15 +22,15 @@ Plugin 'Rykka/riv.vim'
 Plugin 'scratch.vim'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Rip-Rip/clang_complete'
 Plugin 'SirVer/ultisnips'
-Plugin 'ervandew/supertab'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'vim-json-bundle'
 Plugin 'taglist.vim'
 Plugin 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 Plugin 'nosami/Omnisharp'
 Plugin 'tpope/vim-dispatch'
+"Plugin 'Valloric/YouCompleteMe'
 
 "End of Vundle config
 filetype plugin indent on
@@ -278,3 +278,10 @@ nnoremap <leader>th :OmniSharpHighlightTypes<cr>
 
 " END Omnisharp config
 
+" Fix key binding conflicts between UltiSnips and YCM
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
+let g:ycm_key_invoke_completion = '<C-Down>'
+
+nmap <silent> <leader>h <Plug>DashSearch
