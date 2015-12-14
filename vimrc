@@ -30,6 +30,7 @@ Plugin 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Plugin 'nosami/Omnisharp'
 Plugin 'tpope/vim-dispatch'
+Plugin 'toyamarinyon/vim-swift'
 "Plugin 'Valloric/YouCompleteMe'
 
 "End of Vundle config
@@ -52,7 +53,7 @@ set history=2000
 set backupcopy=yes
 set showcmd
 set ruler
-set tabstop=2
+set tabstop=4
 set shiftwidth=2
 set softtabstop=2
 set textwidth=0
@@ -77,7 +78,7 @@ let g:netrw_liststyle=3
 
 "Get python site-packages on the sys.path
 py import sys
-py sys.path.append('/Library/Python/2.7/site-packages')
+"py sys.path.append('/Library/Python/2.7/site-packages')
 
 "map Q to reflow paragraph
 nnoremap Q gqip

@@ -1,3 +1,4 @@
+source ~/.vimrc
 "For Macvim
 set guifont=Source\ Code\ Pro\ for\ Powerline:h12
 set guioptions=egmt
